@@ -244,14 +244,46 @@ const farmen = [
 const farmenContainer = document.getElementById("farmenListe");
 
 farmen.forEach(farm => {
-  const card = document.createElement("div");
+  const card = document.createElement("details");
   card.className = "card";
 
-  const status = document.createElement("span");
-  status.className = "status open";
-  status.textContent = "✖ " + farm;
+  const titel = document.createElement("summary");
+  titel.style.cursor = "pointer";
+  titel.style.fontWeight = "bold";
+  titel.style.color = "#e6cc83";
+  titel.textContent = "❌ " + farm;
 
-  card.appendChild(status);
+  const inhalt = document.createElement("div");
+  inhalt.style.marginTop = "15px";
+
+  const status = document.createElement("p");
+  status.textContent = "Status: Noch nicht gebaut";
+
+  const materialien = document.createElement("p");
+  materialien.textContent =
+    "📦 Benötigte Materialien: Werden noch ergänzt.";
+
+  const fortschritt = document.createElement("div");
+  fortschritt.className = "progress";
+
+  const balken = document.createElement("div");
+  balken.className = "bar";
+  balken.style.width = "0%";
+
+  fortschritt.appendChild(balken);
+
+  const anleitung = document.createElement("p");
+  anleitung.textContent =
+    "📖 Bauanleitung: Wird noch ergänzt.";
+
+  inhalt.append(
+    status,
+    materialien,
+    fortschritt,
+    anleitung
+  );
+
+  card.append(titel, inhalt);
   farmenContainer.appendChild(card);
 });
 </script>
