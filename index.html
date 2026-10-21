@@ -1,72 +1,145 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unser Minecraft-Projekt</title>
-  <style>
-    body {
-      background: #202b20;
-      color: #f5f5f5;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 25px;
-    }
-    header, section {
-      background: #354735;
-      border: 3px solid #657b55;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-    h1, h2 { color: #e2c77a; }
-    .progress {
-      background: #172117;
-      height: 22px;
-      border: 2px solid #82936b;
-    }
-    .bar {
-      background: #70b34c;
-      height: 100%;
-    }
-    li { margin: 12px 0; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minecraft Burgprojekt</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  background-color: #171b19;
+  background-image:
+    linear-gradient(45deg,#ffffff06 25%,transparent 25%),
+    linear-gradient(-45deg,#ffffff06 25%,transparent 25%);
+  background-size: 32px 32px;
+}
+header {
+  text-align: center;
+  padding: 55px 15px;
+  background: linear-gradient(#273b2c,#151d18);
+  border-bottom: 5px solid #65844a;
+}
+h1 { color: #e6cc83; font-size: 36px; }
+h2 { color: #e6cc83; }
+main { max-width: 1100px; margin: auto; padding: 20px; }
+section {
+  background: #303832;
+  border: 3px solid #59695b;
+  box-shadow: 6px 6px 0 #101510;
+  padding: 24px;
+  margin: 25px 0;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 16px;
+}
+.card {
+  background: #222b24;
+  border: 2px solid #50614e;
+  padding: 16px;
+}
+.progress {
+  height: 24px;
+  background: #111811;
+  border: 2px solid #829077;
+  margin: 10px 0;
+}
+.bar {
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,#64a83e 0px,#64a83e 18px,
+    #548e34 18px,#548e34 21px
+  );
+}
+.status { font-weight: bold; }
+.done { color: #83d56c; }
+.open { color: #e2b96b; }
+li { padding: 9px 0; }
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #aeb8ad;
+}
+</style>
 </head>
 <body>
-  <header>
-    <h1>🏰 Unser Minecraft-Burgprojekt</h1>
-    <p>Gemeinsam sammeln, bauen und die Burg fertigstellen!</p>
-  </header>
 
-  <section>
-    <h2>📦 Materialfortschritt</h2>
-    <p>Polierte Schwarzziegelsteine: 0 / 20.000</p>
-    <div class="progress"><div class="bar" style="width:0%"></div></div>
-    <p>Grauer Beton: 0 / 10.201</p>
-    <div class="progress"><div class="bar" style="width:0%"></div></div>
-  </section>
+<header>
+  <h1>🏰 UNSER MINECRAFT BURGPROJEKT</h1>
+  <p>Gemeinsam farmen. Gemeinsam bauen. Gemeinsam gewinnen.</p>
+</header>
 
-  <section>
-    <h2>🌾 Unsere Farmen</h2>
-    <ul>
-      <li>❌ Eisenfarm</li>
-      <li>❌ Zuckerrohrfarm</li>
-      <li>❌ Creeperfarm</li>
-      <li>❌ Goldfarm</li>
-      <li>❌ Villager-Farm</li>
-      <li>❌ XP-Farm</li>
-    </ul>
-  </section>
+<main>
+<section>
+  <h2>📊 Projektübersicht</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>🏰 Hauptprojekt</h3>
+      <p>Mittelalterliche Burg</p>
+      <p>Grundfläche: 101 × 101 Blöcke</p>
+    </div>
+    <div class="card">
+      <h3>⚒️ Baufortschritt</h3>
+      <p>0 von 6 Bauabschnitten abgeschlossen</p>
+      <div class="progress"><div class="bar" style="width:0%"></div></div>
+    </div>
+    <div class="card">
+      <h3>🌾 Farmen</h3>
+      <p>0 von 6 Farmen fertiggestellt</p>
+      <div class="progress"><div class="bar" style="width:0%"></div></div>
+    </div>
+  </div>
+</section>
 
-  <section>
-    <h2>⚒️ Bauabschnitte</h2>
-    <ul>
-      <li>⬜ Gelände vorbereiten</li>
-      <li>⬜ Burggraben ausheben</li>
-      <li>⬜ Burgmauern errichten</li>
-      <li>⬜ Vier Wachtürme bauen</li>
-      <li>⬜ Zugbrücke und Torhaus bauen</li>
-      <li>⬜ Burgfried errichten</li>
-    </ul>
-  </section>
+<section>
+  <h2>📦 Materiallager</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Polierte Schwarzziegelsteine</h3>
+      <p>0 / 20.000 Blöcke</p>
+      <div class="progress"><div class="bar" style="width:0%"></div></div>
+    </div>
+    <div class="card">
+      <h3>Grauer Beton</h3>
+      <p>0 / 10.201 Blöcke</p>
+      <div class="progress"><div class="bar" style="width:0%"></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>🌾 Farmenübersicht</h2>
+  <div class="grid">
+    <div class="card"><span class="status open">✖ Weizenfarm</span></div>
+    <div class="card"><span class="status open">✖ Eisenfarm</span></div>
+    <div class="card"><span class="status open">✖ Zuckerrohrfarm</span></div>
+    <div class="card"><span class="status open">✖ Creeperfarm</span></div>
+    <div class="card"><span class="status open">✖ Goldfarm</span></div>
+    <div class="card"><span class="status open">✖ Villager-Farm</span></div>
+    <div class="card"><span class="status open">✖ XP-Farm</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>⚒️ Unsere Bauabschnitte</h2>
+  <div class="grid">
+    <div class="card">⬜ 1. Gelände vorbereiten</div>
+    <div class="card">⬜ 2. Burggraben ausheben</div>
+    <div class="card">⬜ 3. Burgmauern errichten</div>
+    <div class="card">⬜ 4. Vier Wachtürme bauen</div>
+    <div class="card">⬜ 5. Zugbrücke und Torhaus bauen</div>
+    <div class="card">⬜ 6. Burgfried errichten</div>
+  </div>
+</section>
+</main>
+
+<footer>
+  Minecraft Burgprojekt | Gemeinsam zum Ziel
+</footer>
+
 </body>
 </html>
