@@ -208,15 +208,53 @@ bauabschnitte.forEach(abschnitt => {
 </script>
 <section>
   <h2>🌾 Farmenübersicht</h2>
-  <div class="grid">
-    <div class="card"><span class="status open">✖ Weizenfarm</span></div>
-    <div class="card"><span class="status open">✖ Eisenfarm</span></div>
-    <div class="card"><span class="status open">✖ Zuckerrohrfarm</span></div>
-    <div class="card"><span class="status open">✖ Creeperfarm</span></div>
-    <div class="card"><span class="status open">✖ Goldfarm</span></div>
-    <div class="card"><span class="status open">✖ Villager-Farm</span></div>
-    <div class="card"><span class="status open">✖ XP-Farm</span></div>
-  </div>
+  <section>
+  <h2>🌾 Farmenübersicht</h2>
+  <p>Alle wichtigen Farmen unseres Minecraft-Servers.</p>
+
+  <div class="grid" id="farmenListe"></div>
+</section>
+
+<script>
+const farmen = [
+  "Eisenfarm",
+  "Zuckerrohrfarm",
+  "Weizenfarm",
+  "Karotten-/Kartoffelfarm",
+  "Tierfarm",
+  "Bambusfarm",
+  "Baumfarm",
+  "Stein-/Bruchsteinfarm",
+  "Creeperfarm",
+  "Allgemeine Monsterfarm",
+  "XP-Farm",
+  "Villager-Zucht",
+  "Villager-Handelshalle",
+  "Goldfarm",
+  "Endermanfarm",
+  "Slimefarm",
+  "Honigfarm",
+  "Wollfarm",
+  "Kelp-Farm",
+  "Raid-Farm",
+  "Wither-Skelett-Farm",
+  "Guardian-Farm"
+];
+
+const farmenContainer = document.getElementById("farmenListe");
+
+farmen.forEach(farm => {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  const status = document.createElement("span");
+  status.className = "status open";
+  status.textContent = "✖ " + farm;
+
+  card.appendChild(status);
+  farmenContainer.appendChild(card);
+});
+</script>
 </section>
 
 <section>
