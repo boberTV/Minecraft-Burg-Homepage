@@ -145,6 +145,24 @@ section {
   );
   transition:width .3s;
 }
+  /* Lange Farmnamen sauber umbrechen */
+summary {
+  min-width: 0;
+}
+
+summary span:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+summary::after {
+  flex-shrink: 0;
+}
+
+details.card {
+  min-width: 0;
+}
 summary {
   display:flex;
   align-items:center;
