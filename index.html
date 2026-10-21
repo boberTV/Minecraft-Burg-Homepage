@@ -5,86 +5,203 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Amateur-Craftattack #1</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
 <style>
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
-  background: #171d19;
   color: #f1f1f1;
   font-family: Arial, sans-serif;
+  background:
+    linear-gradient(#101b15bb, #101b15e8),
+    url("https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1800&q=85")
+    center / cover fixed;
+  background-color: #152018;
 }
+
 header {
-  padding: 45px 15px;
+  min-height: 310px;
+  padding: 55px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  background: linear-gradient(#354737,#19251d);
-  border-bottom: 5px solid #77935b;
+  background:
+    linear-gradient(#111b17a0, #111b17e0),
+    url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1800&q=85")
+    center / cover;
+  border-bottom: 6px solid #718955;
 }
-h1 { color: #e8ce85; font-size: clamp(26px,5vw,42px); }
-h2 { color: #e8ce85; }
-h3 { color: #f0dfb0; }
-main { max-width: 1150px; margin: auto; padding: 20px; }
+
+h1, h2 {
+  font-family: "Press Start 2P", monospace;
+  line-height: 1.7;
+  color: #f0d68b;
+}
+
+h1 { font-size: clamp(18px, 3vw, 34px); }
+h2 { font-size: clamp(14px, 2vw, 19px); }
+h3 { color: #f0d68b; }
+
+header p { font-size: 20px; }
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #19261ef5;
+  border-bottom: 3px solid #718955;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px;
+}
+
+nav a {
+  color: #f0d68b;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 9px 12px;
+}
+
+nav a:hover { background: #435a3b; }
+
+main {
+  max-width: 1150px;
+  margin: auto;
+  padding: 20px;
+}
+
 section {
-  background: #303a32;
-  border: 3px solid #637563;
-  box-shadow: 5px 5px 0 #0e130f;
-  padding: 22px;
-  margin: 25px 0;
+  scroll-margin-top: 95px;
+  background: #253027ed;
+  border: 4px solid #697c68;
+  box-shadow: 7px 7px 0 #0d140e;
+  padding: 24px;
+  margin: 28px 0;
 }
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
 }
+
 .card {
-  background: #222c25;
-  border: 2px solid #526650;
-  padding: 16px;
+  background: #29372c;
+  border: 3px solid #566a54;
+  padding: 17px;
+  box-shadow: 3px 3px 0 #101810;
 }
-summary {
-  cursor: pointer;
-  font-weight: bold;
-  color: #e8ce85;
-}
-details[open] summary { margin-bottom: 15px; }
+
 .progress {
-  height: 22px;
+  height: 24px;
   background: #111811;
   border: 2px solid #829077;
   margin: 10px 0;
 }
+
 .bar {
   height: 100%;
-  background: #72b64d;
+  background: repeating-linear-gradient(
+    90deg,
+    #78b84b 0 18px,
+    #629a3d 18px 21px
+  );
   transition: width .2s;
 }
+
+summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: bold;
+  color: #f0d68b;
+  list-style: none;
+}
+
+summary::-webkit-details-marker { display: none; }
+
+summary::after {
+  content: "+";
+  margin-left: auto;
+  font-size: 24px;
+}
+
+details[open] summary::after { content: "−"; }
+details[open] summary { margin-bottom: 15px; }
+
+.farm-icon {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  background: #172019;
+  border: 2px solid #53654f;
+  padding: 4px;
+}
+
+.farm-details {
+  border-top: 1px solid #566a54;
+  padding-top: 15px;
+}
+
+input[type="checkbox"] {
+  accent-color: #78b84b;
+  width: 18px;
+  height: 18px;
+}
+
 input[type="number"] {
   width: 105px;
-  max-width: 100%;
-  background: #131c15;
-  color: white;
-  border: 1px solid #829077;
   padding: 8px;
+  background: #131d15;
+  color: white;
+  border: 2px solid #829077;
 }
-input[type="checkbox"] { accent-color: #72b64d; }
-button, .link {
+
+.material-input {
+  display: block;
+  margin: 10px 0;
+}
+
+.link, button {
   display: inline-block;
+  padding: 10px 14px;
   background: #527c3e;
   color: white;
-  border: 2px solid #8cad70;
-  padding: 9px 13px;
   text-decoration: none;
+  border: 3px solid #8cad70;
   cursor: pointer;
   font-weight: bold;
 }
-button:hover, .link:hover { background: #65964c; }
-.status-open { color: #f0a39a; }
-.status-done { color: #95df81; }
-.muted { color: #b6c4b7; }
-.material { margin-bottom: 18px; }
-.material label { display: block; margin: 7px 0; }
-footer { text-align: center; padding: 25px; color: #aeb8ad; }
+
+.link:hover, button:hover { background: #65964c; }
+
+.done { color: #94e080; }
+.open { color: #f2aaa0; }
+.muted { color: #bfccbd; }
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #d0dccc;
+}
+
+@media(max-width: 650px) {
+  section { padding: 15px; }
+  nav a { font-size: 13px; }
+}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -92,52 +209,70 @@ footer { text-align: center; padding: 25px; color: #aeb8ad; }
   <p>Von und für Amateure.</p>
 </header>
 
+<nav>
+  <a href="#uebersicht">Übersicht</a>
+  <a href="#burg">Burgprojekt</a>
+  <a href="#materialien">Materialien</a>
+  <a href="#farmen">Farmen</a>
+</nav>
+
 <main>
-<section>
+
+<section id="uebersicht">
   <h2>📊 Projektübersicht</h2>
   <div class="grid">
     <div class="card">
-      <h3>🏰 Unser Hauptprojekt</h3>
+      <h3>🏰 Hauptprojekt</h3>
       <p>Mittelalterliche Burg</p>
       <p>Grundfläche: 101 × 101 Blöcke</p>
     </div>
     <div class="card">
       <h3>⚒️ Baufortschritt</h3>
       <p id="bauStatistik"></p>
-      <div class="progress"><div class="bar" id="bauBalken"></div></div>
+      <div class="progress">
+        <div class="bar" id="bauBalken"></div>
+      </div>
     </div>
     <div class="card">
       <h3>🌾 Farmenfortschritt</h3>
       <p id="farmStatistik"></p>
-      <div class="progress"><div class="bar" id="farmBalken"></div></div>
+      <div class="progress">
+        <div class="bar" id="farmBalken"></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section>
-  <h2>📦 Burgmaterialien</h2>
-  <p class="muted">Die Zielmengen sind vorläufige Planwerte.</p>
-  <div id="materialien"></div>
+<section id="burg">
+  <h2>🏰 Burgprojekt</h2>
+  <p>Unsere Bauabschnitte</p>
+  <div class="grid" id="bauListe"></div>
 </section>
 
-<section>
+<section id="materialien">
+  <h2>📦 Burgmaterialien</h2>
+  <p class="muted">Die Zielmengen sind vorläufige Planwerte.</p>
+  <div id="materialListe"></div>
+</section>
+
+<section id="farmen">
   <h2>🌾 Farmenübersicht</h2>
-  <p class="muted">Klicke auf eine Farm, um den Status und den YouTube-Link zu sehen.</p>
+  <p class="muted">
+    Klicke auf eine Farm, um ihren Status und den YouTube-Link zu sehen.
+  </p>
   <div class="grid" id="farmenListe"></div>
 </section>
 
 <section>
-  <h2>⚒️ Unsere Bauabschnitte</h2>
-  <div class="grid" id="bauListe"></div>
-</section>
-
-<section>
   <h2>💾 Fortschritt sichern</h2>
-  <p class="muted">Die Änderungen werden zunächst nur in diesem Browser gespeichert, nicht für alle Spieler synchronisiert.</p>
+  <p class="muted">
+    Änderungen werden zunächst nur in diesem Browser gespeichert.
+  </p>
   <button id="exportBtn">Fortschritt exportieren</button>
   <button id="importBtn">Fortschritt importieren</button>
-  <input type="file" id="importDatei" accept=".json,application/json" hidden>
+  <input type="file" id="importDatei" accept=".json" hidden>
 </section>
+
 </main>
 
 <footer>Amateur-Craftattack #1</footer>
@@ -191,35 +326,35 @@ const bauabschnitte = [
 ];
 
 const farmen = [
-  "Eisenfarm",
-  "Zuckerrohrfarm",
-  "Weizenfarm",
-  "Karotten-/Kartoffelfarm",
-  "Tierfarm",
-  "Bambusfarm",
-  "Baumfarm",
-  "Stein-/Bruchsteinfarm",
-  "Creeperfarm",
-  "Allgemeine Monsterfarm",
-  "XP-Farm",
-  "Villager-Zucht",
-  "Villager-Handelshalle",
-  "Goldfarm",
-  "Endermanfarm",
-  "Slimefarm",
-  "Honigfarm",
-  "Wollfarm",
-  "Kelp-Farm",
-  "Raid-Farm",
-  "Wither-Skelett-Farm",
-  "Guardian-Farm"
+  ["Eisenfarm", "iron_ingot"],
+  ["Zuckerrohrfarm", "sugar_cane"],
+  ["Weizenfarm", "wheat"],
+  ["Karotten-/Kartoffelfarm", "carrot"],
+  ["Tierfarm", "wheat"],
+  ["Bambusfarm", "bamboo"],
+  ["Baumfarm", "oak_sapling"],
+  ["Stein-/Bruchsteinfarm", "cobblestone"],
+  ["Creeperfarm", "gunpowder"],
+  ["Allgemeine Monsterfarm", "rotten_flesh"],
+  ["XP-Farm", "experience_bottle"],
+  ["Villager-Zucht", "emerald"],
+  ["Villager-Handelshalle", "emerald"],
+  ["Goldfarm", "gold_ingot"],
+  ["Endermanfarm", "ender_pearl"],
+  ["Slimefarm", "slime_ball"],
+  ["Honigfarm", "honey_bottle"],
+  ["Wollfarm", "white_wool"],
+  ["Kelp-Farm", "kelp"],
+  ["Raid-Farm", "totem_of_undying"],
+  ["Wither-Skelett-Farm", "wither_skeleton_skull"],
+  ["Guardian-Farm", "prismarine_shard"]
 ];
 
-const schluessel = "amateur-craftattack-1";
+const speicherName = "amateur-craftattack-1";
 
 function ladeDaten() {
   try {
-    return JSON.parse(localStorage.getItem(schluessel)) || {};
+    return JSON.parse(localStorage.getItem(speicherName)) || {};
   } catch {
     return {};
   }
@@ -231,7 +366,7 @@ daten.bau ||= {};
 daten.materialien ||= {};
 
 function speichern() {
-  localStorage.setItem(schluessel, JSON.stringify(daten));
+  localStorage.setItem(speicherName, JSON.stringify(daten));
 }
 
 function prozent(wert, ziel) {
@@ -239,7 +374,7 @@ function prozent(wert, ziel) {
 }
 
 function renderMaterialien() {
-  const container = document.getElementById("materialien");
+  const container = document.getElementById("materialListe");
   container.replaceChildren();
 
   bauabschnitte.forEach((abschnitt, index) => {
@@ -252,7 +387,7 @@ function renderMaterialien() {
 
     abschnitt.materialien.forEach(([name, ziel], materialIndex) => {
       const id = index + "-" + materialIndex;
-      const werte = daten.materialien[id] || {lager: 0, verbaut: 0};
+      const werte = daten.materialien[id] || { lager: 0, verbaut: 0 };
 
       const card = document.createElement("div");
       card.className = "card";
@@ -261,18 +396,18 @@ function renderMaterialien() {
       heading.textContent = name;
 
       const menge = document.createElement("p");
-      const balken = document.createElement("div");
-      balken.className = "bar";
-
       const progress = document.createElement("div");
       progress.className = "progress";
+
+      const balken = document.createElement("div");
+      balken.className = "bar";
       progress.appendChild(balken);
 
       const details = document.createElement("div");
-      details.className = "material";
 
       function eingabe(text, feld) {
         const label = document.createElement("label");
+        label.className = "material-input";
         label.textContent = text + ": ";
 
         const input = document.createElement("input");
@@ -285,6 +420,7 @@ function renderMaterialien() {
           const zahl = Number(input.value);
           werte[feld] = Number.isFinite(zahl)
             ? Math.max(0, Math.floor(zahl)) : 0;
+
           daten.materialien[id] = werte;
           speichern();
           aktualisieren();
@@ -322,13 +458,24 @@ function renderFarmen() {
   const container = document.getElementById("farmenListe");
   container.replaceChildren();
 
-  farmen.forEach(farm => {
+  farmen.forEach(([farm, item]) => {
     const card = document.createElement("details");
     card.className = "card";
 
     const titel = document.createElement("summary");
 
+    const bild = document.createElement("img");
+    bild.className = "farm-icon";
+    bild.alt = "";
+    bild.loading = "lazy";
+    bild.src = "https://minecraft.wiki/images/Invicon_" + item + ".png";
+    bild.onerror = () => { bild.style.display = "none"; };
+
+    const name = document.createElement("span");
+    titel.append(bild, name);
+
     const inhalt = document.createElement("div");
+    inhalt.className = "farm-details";
 
     const status = document.createElement("label");
     const checkbox = document.createElement("input");
@@ -336,15 +483,14 @@ function renderFarmen() {
     checkbox.checked = !!daten.farmen[farm];
 
     const statusText = document.createElement("span");
-    statusText.style.marginLeft = "8px";
 
     function aktualisieren() {
       const fertig = checkbox.checked;
-      titel.textContent = (fertig ? "✅ " : "❌ ") + farm;
+      name.textContent = (fertig ? "✅ " : "❌ ") + farm;
       statusText.textContent = fertig
-        ? "Fertiggestellt"
-        : "Noch nicht gebaut";
-      statusText.className = fertig ? "status-done" : "status-open";
+        ? " Fertiggestellt"
+        : " Noch nicht gebaut";
+      statusText.className = fertig ? "done" : "open";
     }
 
     checkbox.addEventListener("change", () => {
@@ -360,18 +506,17 @@ function renderFarmen() {
     const link = document.createElement("a");
     link.className = "link";
     link.textContent = "▶ YouTube-Tutorial öffnen";
-
-    link.href = "https://www.youtube.com/results?search_query=" +
+    link.href =
+      "https://www.youtube.com/results?search_query=" +
       encodeURIComponent("Minecraft Java " + farm + " Tutorial deutsch");
-
     link.target = "_blank";
     link.rel = "noopener noreferrer";
 
     linkAbsatz.appendChild(link);
     inhalt.append(status, linkAbsatz);
+
     card.append(titel, inhalt);
     container.appendChild(card);
-
     aktualisieren();
   });
 }
@@ -405,7 +550,7 @@ function renderBau() {
 }
 
 function aktualisiereStatistik() {
-  const farmFertig = farmen.filter(f => daten.farmen[f]).length;
+  const farmFertig = farmen.filter(([f]) => daten.farmen[f]).length;
   const bauFertig = bauabschnitte.filter((_, i) => daten.bau[i]).length;
 
   document.getElementById("farmStatistik").textContent =
